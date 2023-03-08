@@ -10,7 +10,8 @@ const isAuthenticated = async (req,res,next)=>{
             return next('Please login to access the data');
         }
         const verify = jwt.verify(token, process.env.SECRET_KEY);
-        req.user = await userModel.findById(verify.user);
+        user = await userModel.findById(verify.user);
+        req.user = user;
         next();
     } catch (error) {
        return next(error); 
