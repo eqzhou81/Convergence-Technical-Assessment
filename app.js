@@ -14,7 +14,7 @@ app.use(cookieParser());
 const userRoute = require('./routes/userRoute');
 const taskRoute = require('./routes/taskRoute');
 
-mongoose.connect("mongodb+srv://eqzhou81:PowerIt0308!@todolist-gql.vni9p8m.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://"+process.env.NAME+":"+process.env.PASSWORD+"@todolist-gql.vni9p8m.mongodb.net/?retryWrites=true&w=majority");
 mongoose.connection.once("open", () => {
     console.log("Connected to database");
 });
