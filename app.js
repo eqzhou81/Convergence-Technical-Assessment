@@ -19,7 +19,7 @@ mongoose.connection.once("open", () => {
     console.log("Connected to database");
 });
 
-const port = 3000;
+const port = 3002;
 
 app.use("/graphql", graphqlHTTP({
     schema,
